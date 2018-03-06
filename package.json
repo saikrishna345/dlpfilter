@@ -1,0 +1,17 @@
+{
+  "name": "dlpfilter",
+  "version": "0.0.1",
+  "description": "The dlpfilter is used to filter the senstive text inside the text and image files.",
+  "main": "dlpfilter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/dlp": "^0.2.0",
+    "always-tail": "^0.2.0",
+    "mime": "^2.2.0",
+    "yargs": "^11.0.0"
+  }
+}
