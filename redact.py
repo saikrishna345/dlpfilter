@@ -107,40 +107,42 @@ def redact_image(project, filename, output_filename,
 
 
 if __name__ == '__main__':
-    default_project = os.environ.get('GCLOUD_PROJECT')
+    redact_image('kubernetes-218409', '~/resources/dlp.txt', '~/resources/dlp-output.txt', ['EMAIL_ADDRESS'])
+#     default_project = os.environ.get('GCLOUD_PROJECT')
 
-    parser = argparse.ArgumentParser(description=__doc__)
+#     parser = argparse.ArgumentParser(description=__doc__)
 
-    parser.add_argument(
-        'filename', help='The path to the file to inspect.')
-    parser.add_argument(
-        'output_filename',
-        help='The path to which the redacted image will be written.')
-    parser.add_argument(
-        '--project',
-        help='The Google Cloud project id to use as a parent resource.',
-        default=default_project)
-    parser.add_argument(
-        '--info_types', action='append',
-        help='Strings representing info types to look for. A full list of '
-             'info categories and types is available from the API. Examples '
-             'include "FIRST_NAME", "LAST_NAME", "EMAIL_ADDRESS". '
-             'If unspecified, the three above examples will be used.',
-        default=['FIRST_NAME', 'LAST_NAME', 'EMAIL_ADDRESS'])
-    parser.add_argument(
-        '--min_likelihood',
-        choices=['LIKELIHOOD_UNSPECIFIED', 'VERY_UNLIKELY', 'UNLIKELY',
-                 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'],
-        help='A string representing the minimum likelihood threshold that '
-             'constitutes a match.')
-    parser.add_argument(
-        '--mime_type',
-        help='The MIME type of the file. If not specified, the type is '
-             'inferred via the Python standard library\'s mimetypes module.')
+#     parser.add_argument(
+#         'filename', help='The path to the file to inspect.')
+#     parser.add_argument(
+#         'output_filename',
+#         help='The path to which the redacted image will be written.')
+#     parser.add_argument(
+#         '--project',
+#         help='The Google Cloud project id to use as a parent resource.',
+#         default=default_project)
+#     parser.add_argument(
+#         '--info_types', action='append',
+#         help='Strings representing info types to look for. A full list of '
+#              'info categories and types is available from the API. Examples '
+#              'include "FIRST_NAME", "LAST_NAME", "EMAIL_ADDRESS". '
+#              'If unspecified, the three above examples will be used.',
+#         default=['FIRST_NAME', 'LAST_NAME', 'EMAIL_ADDRESS'])
+#     parser.add_argument(
+#         '--min_likelihood',
+#         choices=['LIKELIHOOD_UNSPECIFIED', 'VERY_UNLIKELY', 'UNLIKELY',
+#                  'POSSIBLE', 'LIKELY', 'VERY_LIKELY'],
+#         help='A string representing the minimum likelihood threshold that '
+#              'constitutes a match.')
+#     parser.add_argument(
+#         '--mime_type',
+#         help='The MIME type of the file. If not specified, the type is '
+#              'inferred via the Python standard library\'s mimetypes module.')
 
-    args = parser.parse_args()
+#     args = parser.parse_args()
 
-    redact_image(
-        args.project, args.filename, args.output_filename,
-        args.info_types, min_likelihood=args.min_likelihood,
-        mime_type=args.mime_type)
+#     redact_image(
+#         args.project, args.filename, args.output_filename,
+#         args.info_types, min_likelihood=args.min_likelihood,
+#         mime_type=args.mime_type)
+
