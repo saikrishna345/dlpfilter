@@ -191,7 +191,7 @@ def redact_imageTypes(project,filename,output_filename,info_types,min_likelihood
     # Convert the project id into a full resource id.
     parent = dlp.project_path(project)
 
-    Call the API.
+    # Call the API.
     response = dlp.redact_image(
         parent, inspect_config=inspect_config,
         image_redaction_configs=image_redaction_configs,
